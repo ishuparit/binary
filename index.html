@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Binary to Decimal Converter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        
+   body {
+    background-color: #ffffff; /* Light grey background for neumorphism */
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header, footer {
+    background-color: #ddebff; /* Same as body for seamless neumorphic effect */
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    color: #333;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 9px 9px 16px rgba(0, 0, 0, 0.1), -9px -9px 16px rgba(255, 255, 255, 0.5);
+}
+
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 20px;
+            text-align: center;
+        }
+
+        input, button {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        button {
+            background-color: #4CAF50;
+color: white;
+border: none;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}    
+button:hover {
+        background-color: #45a049;
+    }
+
+    .output {
+        margin-top: 15px;
+        font-size: 20px;
+    }
+</style>
+<script>
+    function convertToDecimal() {
+        var binaryInput = document.getElementById("binaryInput").value;
+        var decimalOutput = parseInt(binaryInput, 2);
+        if (isNaN(decimalOutput)) {
+            alert("Please enter a valid binary number.");
+        } else {
+            document.getElementById("decimalOutput").innerText = decimalOutput;
+        }
+    }
+</script>
+</head>
+<body>
+    <header>
+        Binary to Decimal Converter
+    </header>
+<div class="container">
+    <div class="glassmorphism">
+        <input type="text" id="binaryInput" placeholder="Enter binary number">
+        <button onclick="convertToDecimal()">Convert</button>
+        <div class="output">Decimal Output: <span id="decimalOutput"></span></div>
+    </div>
+</div>
+
+<footer>
+    &copy; 2024 Binary
+</footer>
